@@ -19,6 +19,22 @@
 
 //   const onSubmit = async (e) => {
 //     e.preventDefault();
+ // Validation checks
+    if (!isLogin && !username) {
+      setError('Username is required');
+      return;
+    }
+
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setError('Please provide a valid email address');
+      return;
+    }
+
+    if (!password) {
+      setError('Password is required');
+      return;
+    }
+
 //     const url = isLogin ? 'http://localhost:5000/api/auth/login' : 'http://localhost:5000/api/auth/register';
 //     const data = isLogin ? { email, password } : { username, email, password };
 //     try {
